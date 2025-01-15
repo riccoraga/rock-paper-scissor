@@ -1,31 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock-Paper-Scissors</title>
-    <link rel="stylesheet" href="index.css">
-   
-</head>
-<body>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
     <div class="container">
-        <h1>Rock - Paper - Scissors game!</h1>
-        <h3>Your move</h3>
-        <div id ="choices" class="choices">
-          <button class="buttonChoice" value="rock" id="rockButton" >Rock</button>
-          <button class="buttonChoice" value="paper" id="paperButton" >Paper</button>
-          <button class="buttonChoice" value="scissors" id="scissorsButton">Scissors</button>
-        </div>
-        <div class="results">
-          <h2>Results</h2>
-          <p id="humanChoice">Your choice: </p>
-          <p id="computerChoice">Computer choice: </p>
-          <p id="winner">Winner: </p>
-        </div>
-        <button class="new-game" value="new-game" id="newGameButton" >Play new game!</button>
+      <h1>Rock - Paper - Scissors game!</h1>
+      <h3>Your move</h3>
+      <div id="choices" class="choices">
+        <button class="buttonChoice" value="rock" id="rockButton">Rock</button>
+        <button class="buttonChoice" value="paper" id="paperButton">
+          Paper
+        </button>
+        <button class="buttonChoice" value="scissors" id="scissorsButton">
+          Scissors
+        </button>
       </div>
+      <div class="results">
+        <h2>Results</h2>
+        <p>Your choice: <span id="humanChoice"></span></p>
+        <p>Computer choice: <span id="computerChoice"></span></p>
+        <p id="winner">Winner:</p>
+      </div>
+      <button class="new-game" value="new-game" id="newGameButton">
+        Play new game!
+      </button>
+    </div>
 
-       <script defer  src="./gameMain.js"></script>
-    <script   src="./index.js"></script>
-</body>
+    <script defer src="./gameMain.js"></script>
+    <script src="./index.js"></script>
+  </body>
 </html>
