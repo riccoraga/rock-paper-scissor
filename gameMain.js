@@ -3,11 +3,12 @@ class Game {
   constructor() {
     this.gameEngine;
     this.inGameGraphic;
+    this.points = 0
   }
 
   gameEngine(humanChoice, computerChoice) {
     let winner = "";
-    this.points = 0;
+    
 
     // Cases for the choices
     if (humanChoice === computerChoice) {
