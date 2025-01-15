@@ -1,16 +1,16 @@
 // Class Game Logic
 class Game {
-  constructor(userName = "", choiceValue = "") {
-    this.userName = userName;
-    this.choiceValue = choiceValue;
+  constructor() {
+  this.gameEngine
   }
 
-  setUserName(userName) {
-    this.userName = userName;
-  }
+  gameEngine(humanChoice, computerChoice){
 
-  setChoiceValue(choiceValue) {
-    this.choiceValue = choiceValue;
+    // Cases for the choices
+    if(humanChoice === computerChoice){
+      console.log('Draw, do it again');
+    }
+
   }
 }
 
@@ -18,15 +18,15 @@ class Game {
 class Player {
   constructor(userName) {
     this.userName = userName;
-    this.newGame = new Game();
-    this.newGame.setUserName(userName);
+    const game = new Game()
+    this.game = game
   }
 
-  chooseRoPaSC(choice) {
-    console.log("Button is clicked  value: ",choice);
-    //console.log(event.target.value) // Log the value of the button clicked
-    // Send the choice value to the Game logic class
-    //this.newGame.setChoiceValue(event.target.value)
+  chooseRoPaSC(humanChoice, computerChoice) {
+
+    console.log("Button is clicked for human value: ",humanChoice);
+    console.log("Button is clicked for Computer value: ",computerChoice);
+    this.game.gameEngine(humanChoice, computerChoice)
   }
 }
 
@@ -36,7 +36,7 @@ class ComputerPlayer extends Player {
     super(userName);
     const newPlayer = new Player(); // Instantiate a new Player class object
     this.newPlayer = newPlayer
-    this.randomChoice();
+    this.randomChoice; // Instantiate a new function for random choice
   }
 
 
@@ -52,8 +52,8 @@ class ComputerPlayer extends Player {
     }
     console.log("Random number ", randomNumber);
     console.log("Choice:  ", choice);
-    this.newPlayer.chooseRoPaSC(choice); // Invoke this. to force to recognize the Player object
-    
+    //this.newPlayer.chooseRoPaSC(choice); // Invoke this. to force to recognize the Player object
+    return choice
   }
 }
 
@@ -62,14 +62,15 @@ class HumanPlayer extends Player {
   constructor(userName = "Human") {
     super(userName);
     const newPlayer = new Player(); // Instantiate a new Player class object
-
+    const newComputerPlayer = new ComputerPlayer()
     const buttons = document.querySelectorAll(".buttonChoice"); // Select all the buttons of this class
     buttons.forEach((button) => {
       button.addEventListener("click", (eventValue) => {
         // eventValue catch the id of the button clicked
         const choice = eventValue.target.value; // Retrieve the value of the button (event) clicked
         //console.log("You clicked: ", buttonValue);
-        newPlayer.chooseRoPaSC(choice); // Call the chooseRoPaSC in the Parent Class
+        newPlayer.chooseRoPaSC(choice, newComputerPlayer.randomChoice()); // Call the chooseRoPaSC in the Parent Class
+       
       });
     });
 
