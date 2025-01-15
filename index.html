@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock-Paper-Scissors</title>
     <link rel="stylesheet" href="index.css">
-    <script defer type="script" src="./gameMain.js"></script>
+   
 </head>
 <body>
     <div class="container">
         <h1>Rock - Paper - Scissors game!</h1>
         <h3>Your move</h3>
-        <div class="choices">
-          <button value="rock" id="rockButton" >Rock</button>
-          <button value="paper" id="paperButton" onclick="buttonClick(this.value)">Paper</button>
-          <button value="scissors" id="scissorsButton" onclick="buttonClick(this.value)">Scissors</button>
+        <div id ="choices" class="choices">
+          <button class="buttonChoice" value="rock" id="rockButton" >Rock</button>
+          <button class="buttonChoice" value="paper" id="paperButton" >Paper</button>
+          <button class="buttonChoice" value="scissors" id="scissorsButton">Scissors</button>
         </div>
         <div class="results">
           <h2>Results</h2>
@@ -22,7 +22,10 @@
           <p id="computerChoice">Computer choice: </p>
           <p id="winner">Winner: </p>
         </div>
-        <button class="new-game" value="new-game" id="newGameButton" onclick="buttonClick(this.value)">Play new game!</button>
+        <button class="new-game" value="new-game" id="newGameButton" >Play new game!</button>
       </div>
+
+       <script defer  src="./gameMain.js"></script>
+    <script   src="./index.js"></script>
 </body>
 </html>
