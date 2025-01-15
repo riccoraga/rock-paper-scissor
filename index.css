@@ -41,3 +41,8 @@ body {
   .new-game:hover {
     background-color: rgb(170 71 255);
   }
+
+  p {
+    font-size: larger;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
